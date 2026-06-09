@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welluma Health – Never Miss What Matters</title>
-  <meta name="description" content="Welluma records your medical appointments and turns them into clear, plain-language summaries with trusted resource links." />
+  <meta name="description" content="Welluma records your medical appointments and turns them into clear, plain-language summaries with trusted resource links. Available on iPhone." />
   <meta name="theme-color" content="#1B4F72" />
   <meta property="og:title" content="Welluma Health – Never Miss What Matters" />
   <meta property="og:description" content="Record your appointments. Understand your care. Welluma turns medical visits into plain-language summaries with trusted resources." />
@@ -55,6 +55,10 @@
     .hero h1 em{font-style:italic;color:var(--teal-lt);}
     .hero p{font-size:1.08rem;color:rgba(255,255,255,.82);max-width:480px;margin-bottom:36px;line-height:1.7;}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+    .hero-disclaimer{margin-top:20px;font-size:.75rem;color:rgba(255,255,255,.55);max-width:480px;line-height:1.5;}
+    .legal-banner{background:#F0F4F8;border-bottom:1px solid var(--border);padding:12px 0;}
+    .legal-banner-inner{display:flex;align-items:flex-start;gap:10px;font-size:.78rem;color:var(--muted);line-height:1.5;}
+    .legal-banner-inner svg{flex-shrink:0;margin-top:1px;color:var(--muted);}
     .phone-mockup{position:relative;display:flex;justify-content:center;}
     .phone-frame{width:240px;background:var(--navy-deep);border-radius:38px;border:3px solid rgba(255,255,255,.18);padding:16px 10px;box-shadow:0 32px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06);position:relative;}
     .phone-notch{width:80px;height:20px;background:var(--navy-deep);border-radius:0 0 14px 14px;margin:0 auto 10px;position:relative;z-index:2;}
@@ -82,6 +86,7 @@
     .step-num{width:52px;height:52px;border-radius:50%;background:var(--sky);color:var(--navy);font-family:var(--display);font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border:2px solid var(--border);}
     .step h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:10px;}
     .step p{font-size:.9rem;color:var(--muted);line-height:1.6;}
+    .step-note{font-size:.78rem;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-style:italic;line-height:1.5;}
     .step-connector{position:absolute;top:62px;right:-18px;width:36px;height:2px;background:linear-gradient(to right,var(--border),transparent);z-index:1;}
     .features{padding:96px 0;background:var(--off-white);}
     .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
@@ -172,8 +177,10 @@
     .footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.4);}
     .footer-bottom a{color:rgba(255,255,255,.5);transition:color .15s;}
     .footer-bottom a:hover{color:var(--white);}
-    .app-store-btn{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 18px;color:var(--white);font-size:.85rem;font-weight:600;transition:background .15s;cursor:pointer;}
-    .app-store-btn:hover{background:rgba(255,255,255,.18);}
+    .badge-apple{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--navy-deep);border-radius:12px;padding:10px 20px;font-size:.82rem;font-weight:700;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;}
+    .badge-apple:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+    .badge-apple .badge-sub{font-size:.7rem;font-weight:400;opacity:.7;display:block;}
+    .store-badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
     @media(max-width:900px){
       .hero-grid,.about-grid,.contact-grid,.audience-grid{grid-template-columns:1fr;}
       .hero-grid{gap:48px;}.phone-mockup{order:-1;}
@@ -198,6 +205,7 @@
   </style>
 </head>
 <body>
+
 <nav>
   <div class="container nav-inner">
     <a href="#" class="logo" aria-label="Welluma Health Home">
@@ -219,13 +227,14 @@
     </ul>
     <div class="nav-cta">
       <a href="#pricing" class="btn btn-outline" style="padding:9px 20px;font-size:.84rem;">Pricing</a>
-      <a href="#contact" class="btn btn-primary" style="padding:9px 20px;font-size:.84rem;">Get the App</a>
+      <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding:9px 20px;font-size:.84rem;">Download Free</a>
     </div>
     <button class="hamburger" aria-label="Open menu" onclick="toggleMenu(this)">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
 <div id="mobile-menu" style="display:none;position:fixed;inset:0;background:rgba(18,46,66,.97);z-index:200;padding:80px 32px 40px;flex-direction:column;gap:28px;">
   <button onclick="document.getElementById('mobile-menu').style.display='none'" style="position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;" aria-label="Close menu">✕</button>
   <a href="#how-it-works" style="color:white;font-size:1.3rem;font-family:'DM Serif Display',serif;" onclick="document.getElementById('mobile-menu').style.display='none'">How It Works</a>
@@ -233,21 +242,26 @@
   <a href="#audiences" style="color:white;font-size:1.3rem;font-family:'DM Serif Display',serif;" onclick="document.getElementById('mobile-menu').style.display='none'">Who It's For</a>
   <a href="#about" style="color:white;font-size:1.3rem;font-family:'DM Serif Display',serif;" onclick="document.getElementById('mobile-menu').style.display='none'">About</a>
   <a href="#contact" style="color:white;font-size:1.3rem;font-family:'DM Serif Display',serif;" onclick="document.getElementById('mobile-menu').style.display='none'">Contact</a>
-  <a href="#contact" class="btn btn-teal" style="width:fit-content;margin-top:16px;" onclick="document.getElementById('mobile-menu').style.display='none'">Get the App</a>
+  <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="btn btn-teal" style="width:fit-content;margin-top:16px;">Download Free</a>
 </div>
+
 <section class="hero" aria-label="Hero">
   <div class="container hero-grid">
     <div class="hero-copy">
       <div class="hero-eyebrow" aria-hidden="true">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>
-        Coming soon to iPhone
+        Now available on iPhone
       </div>
       <h1>Your appointments.<br><em>Finally</em> in plain language.</h1>
       <p>Welluma records your medical visits and turns them into clear summaries with trusted resource links — so nothing important gets lost between the clinic and home.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-white">Join the Waitlist</a>
+        <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M11.87 8.59c-.02-1.64 1.34-2.43 1.39-2.46-.76-1.11-1.94-1.26-2.35-1.28-1-.1-1.95.59-2.46.59s-1.29-.57-2.12-.56c-1.09.02-2.1.63-2.66 1.61-1.13 1.97-.29 4.9.82 6.5.54.78 1.18 1.66 2.02 1.62.82-.03 1.12-.53 2.1-.53.98 0 1.26.53 2.11.51.87-.02 1.42-.79 1.96-1.58.62-.9.87-1.77.89-1.82-.02-.01-1.71-.65-1.72-2.58z" fill="#1B4F72"/><path d="M10.34 3.96c.45-.55.75-1.31.67-2.08-.65.03-1.44.43-1.9.98-.42.48-.78 1.26-.69 1.99.73.06 1.47-.37 1.92-.89z" fill="#1B4F72"/></svg>
+          Download Free
+        </a>
         <a href="#how-it-works" class="btn" style="background:rgba(255,255,255,.12);color:white;border:1.5px solid rgba(255,255,255,.25);">See How It Works</a>
       </div>
+      <p class="hero-disclaimer">Welluma is not a medical device and does not provide medical advice. Always consult your healthcare provider for medical decisions. Users are responsible for obtaining consent from all parties before recording, in accordance with the laws of their jurisdiction.</p>
     </div>
     <div class="phone-mockup" aria-hidden="true">
       <div class="phone-frame">
@@ -274,6 +288,15 @@
     </div>
   </div>
 </section>
+
+<!-- Legal notice banner -->
+<div class="legal-banner" role="note" aria-label="Legal notice">
+  <div class="container legal-banner-inner">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M7 6v4M7 4.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    <span><strong>Important:</strong> Welluma is not a medical device and does not provide medical advice. Always consult your healthcare provider for medical decisions. Users are responsible for obtaining consent from all parties before recording any appointment, in accordance with the laws of their jurisdiction.</span>
+  </div>
+</div>
+
 <div class="trust-bar" role="complementary" aria-label="Trust indicators">
   <div class="container trust-inner">
     <div class="trust-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:var(--teal)"><path d="M9 1.5L11.5 6.5L17 7.5L13 11.5L14 17L9 14.5L4 17L5 11.5L1 7.5L6.5 6.5L9 1.5Z" fill="currentColor" opacity=".2"/><path d="M9 1.5L11.5 6.5L17 7.5L13 11.5L14 17L9 14.5L4 17L5 11.5L1 7.5L6.5 6.5L9 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Clinician-founded</div>
@@ -283,6 +306,7 @@
     <div class="trust-item"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="color:var(--teal)"><rect x="4" y="7" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 7V5.5a2.5 2.5 0 0 1 5 0V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Privacy-first design</div>
   </div>
 </div>
+
 <section class="how" id="how-it-works" aria-labelledby="how-heading">
   <div class="container">
     <div class="section-header">
@@ -291,12 +315,28 @@
       <p>Three steps that take the confusion out of healthcare visits.</p>
     </div>
     <div class="steps-grid">
-      <div class="step"><div class="step-num">1</div><h3>Record your visit</h3><p>Open Welluma before your appointment. The app captures the conversation with your provider's consent — no manual notes required.</p><div class="step-connector" aria-hidden="true"></div></div>
-      <div class="step"><div class="step-num">2</div><h3>Get a plain-language summary</h3><p>Welluma's AI processes the recording and produces a clear, organized summary of what was discussed, recommended, and next steps — within minutes.</p><div class="step-connector" aria-hidden="true"></div></div>
-      <div class="step"><div class="step-num">3</div><h3>Access trusted resources</h3><p>Each summary links to curated, evidence-based health information so you can learn more, follow through on recommendations, and arrive better prepared for follow-ups.</p></div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Record your visit</h3>
+        <p>Open Welluma before your appointment. The app captures the conversation — no manual notes required.</p>
+        <p class="step-note">Always obtain consent from all parties before recording, in accordance with the laws of your jurisdiction.</p>
+        <div class="step-connector" aria-hidden="true"></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Get a plain-language summary</h3>
+        <p>Welluma's AI processes the recording and produces a clear, organized summary of what was discussed, recommended, and next steps — within minutes.</p>
+        <div class="step-connector" aria-hidden="true"></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Access trusted resources</h3>
+        <p>Each summary links to curated, evidence-based health information so you can learn more, follow through on recommendations, and arrive better prepared for follow-ups.</p>
+      </div>
     </div>
   </div>
 </section>
+
 <section class="features" id="features" aria-labelledby="features-heading">
   <div class="container">
     <div class="section-header">
@@ -314,6 +354,7 @@
     </div>
   </div>
 </section>
+
 <section class="audiences" id="audiences" aria-labelledby="audiences-heading">
   <div class="container">
     <div class="section-header">
@@ -349,6 +390,7 @@
     </div>
   </div>
 </section>
+
 <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
     <div class="section-header">
@@ -368,7 +410,7 @@
           <li><span class="tick">✓</span> Visit history &amp; search</li>
           <li><span class="tick">✓</span> No credit card required</li>
         </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free Trial</a>
+        <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;justify-content:center;">Start Free Trial</a>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
@@ -382,7 +424,7 @@
           <li><span class="tick">✓</span> Follow-up action reminders</li>
           <li><span class="tick">✓</span> Priority support</li>
         </ul>
-        <a href="#contact" class="btn btn-white" style="width:100%;justify-content:center;">Get Started</a>
+        <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="btn btn-white" style="width:100%;justify-content:center;">Get Started</a>
       </div>
       <div class="price-card">
         <h3>Healthcare Providers</h3>
@@ -399,6 +441,7 @@
     </div>
   </div>
 </section>
+
 <section class="privacy-bar" aria-labelledby="privacy-heading">
   <div class="container">
     <div style="text-align:center;margin-bottom:40px;">
@@ -414,6 +457,7 @@
     </div>
   </div>
 </section>
+
 <section class="about" id="about" aria-labelledby="about-heading">
   <div class="container about-grid">
     <div class="about-visual">
@@ -441,6 +485,7 @@
     </div>
   </div>
 </section>
+
 <section class="contact" id="contact" aria-labelledby="contact-heading">
   <div class="container contact-grid">
     <div class="contact-info">
@@ -456,9 +501,13 @@
         <span>Greater Sudbury, Ontario, Canada</span>
       </div>
       <div style="margin-top:32px;">
-        <div class="section-label">Coming Soon</div>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.6;">Welluma is coming to the App Store shortly. Join our waitlist and we'll notify you the moment it's available.</p>
-        <a href="mailto:wellumahealth@gmail.com?subject=Welluma Waitlist&body=Hi, I'd like to be notified when Welluma launches on the App Store." class="btn btn-teal" style="margin-top:14px;font-size:.85rem;padding:10px 20px;">Join the Waitlist</a>
+        <div class="section-label">Download the App</div>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="badge-apple" aria-label="Download Welluma on the App Store">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M14.83 10.74c-.02-2.05 1.67-3.04 1.74-3.08-.95-1.39-2.42-1.58-2.94-1.6-1.25-.13-2.44.74-3.07.74-.63 0-1.61-.72-2.65-.7-1.36.02-2.62.79-3.32 2.01-1.42 2.46-.36 6.12 1.02 8.12.68.97 1.48 2.07 2.53 2.03 1.02-.04 1.4-.66 2.63-.66 1.22 0 1.57.66 2.64.64 1.09-.02 1.78-.99 2.45-1.97.77-1.12 1.09-2.21 1.11-2.27-.03-.01-2.13-.81-2.15-3.23z" fill="var(--navy-deep)"/><path d="M12.92 4.94c.56-.69.94-1.64.84-2.6-.81.03-1.8.54-2.38 1.22-.52.6-.98 1.57-.86 2.49.91.07 1.83-.46 2.4-1.11z" fill="var(--navy-deep)"/></svg>
+            <div><div class="badge-sub">Download on the</div>App Store</div>
+          </a>
+        </div>
       </div>
     </div>
     <div class="contact-form" role="form" aria-label="Contact form">
@@ -489,6 +538,7 @@
     </div>
   </div>
 </section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -501,9 +551,9 @@
         </a>
         <p>Making healthcare conversations clearer, for patients and providers across Canada.</p>
         <div style="margin-top:20px;">
-          <a href="mailto:wellumahealth@gmail.com?subject=Welluma Waitlist&body=Hi, I'd like to be notified when Welluma launches on the App Store." class="app-store-btn">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7zm.5 10.5h-1v-5h1v5zm-.5-6.5a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z" fill="white"/></svg>
-            Notify me when it launches
+          <a href="https://apps.apple.com/app/id6772865076" target="_blank" rel="noopener noreferrer" class="badge-apple" style="background:rgba(255,255,255,.1);color:white;box-shadow:none;border:1px solid rgba(255,255,255,.2);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M11.87 8.59c-.02-1.64 1.34-2.43 1.39-2.46-.76-1.11-1.94-1.26-2.35-1.28-1-.1-1.95.59-2.46.59s-1.29-.57-2.12-.56c-1.09.02-2.1.63-2.66 1.61-1.13 1.97-.29 4.9.82 6.5.54.78 1.18 1.66 2.02 1.62.82-.03 1.12-.53 2.1-.53.98 0 1.26.53 2.11.51.87-.02 1.42-.79 1.96-1.58.62-.9.87-1.77.89-1.82-.02-.01-1.71-.65-1.72-2.58z" fill="white"/><path d="M10.34 3.96c.45-.55.75-1.31.67-2.08-.65.03-1.44.43-1.9.98-.42.48-.78 1.26-.69 1.99.73.06 1.47-.37 1.92-.89z" fill="white"/></svg>
+            <div><div class="badge-sub" style="opacity:.6;">Download on the</div>App Store</div>
           </a>
         </div>
       </div>
@@ -517,6 +567,7 @@
     </div>
   </div>
 </footer>
+
 <script>
   function toggleMenu(btn){const menu=document.getElementById('mobile-menu');menu.style.display=menu.style.display==='flex'?'none':'flex';}
   function handleSubmit(){
