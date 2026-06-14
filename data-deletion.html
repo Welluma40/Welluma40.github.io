@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Deletion — Welluma Health Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B2D56;
+    --teal: #0E7C6B;
+    --teal-mid: #1D9E75;
+    --cream: #FAF8F3;
+    --ink: #1C2B27;
+    --ink-light: #6B817C;
+    --border: rgba(74,124,111,0.15);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+  nav {
+    background: var(--navy); padding: 1.1rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--teal-mid); display: flex; align-items: center; justify-content: center; }
+  .logo-name { font-family: 'DM Serif Display', serif; font-size: 20px; color: white; }
+  .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+  .hero { background: var(--navy); padding: 4rem 2rem 3rem; text-align: center; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: white; margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+  .hero p { color: rgba(255,255,255,0.6); font-size: 15px; }
+  .content { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2rem 0 0.75rem; letter-spacing: -0.2px; }
+  p { margin-bottom: 1rem; font-size: 15px; color: var(--ink); }
+  ol, ul { margin: 0 0 1.25rem 1.5rem; }
+  ol li, ul li { margin-bottom: 0.6rem; font-size: 15px; color: var(--ink); }
+  strong { color: var(--navy); }
+  .card {
+    background: white; border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.5rem; margin: 1.5rem 0;
+  }
+  .card h3 { font-size: 17px; color: var(--teal); margin-bottom: 0.75rem; font-weight: 500; }
+  footer { background: var(--navy); padding: 2rem; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 8px; }
+  @media (max-width: 600px) { nav { padding: 1rem 1.25rem; } .hero h1 { font-size: 1.8rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <div class="logo-circle">
+      <svg width="18" height="18" viewBox="0 0 36 36" fill="none">
+        <path d="M6 20 C9 13, 13 9, 18 16 C23 23, 27 12, 30 16" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <span class="logo-name">Welluma</span>
+  </a>
+  <a href="/" class="nav-link">← Back to Home</a>
+</nav>
+
+<div class="hero">
+  <h1>Data Deletion</h1>
+  <p>How to delete your data from Welluma</p>
+</div>
+
+<div class="content">
+
+  <p>At Welluma, you are always in control of your data. You can delete individual visit records or your entire account and all associated data directly from within the app — no need to contact us.</p>
+
+  <div class="card">
+    <h3>🗑️ Delete a single visit record</h3>
+    <ol>
+      <li>Open the Welluma app and sign in</li>
+      <li>Go to the <strong>History</strong> tab</li>
+      <li>Find the visit you want to remove</li>
+      <li>Tap <strong>Delete Visit</strong></li>
+      <li>Confirm the deletion — this is permanent and immediate</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ Delete your entire account and all data</h3>
+    <ol>
+      <li>Open the Welluma app and sign in</li>
+      <li>Go to the <strong>Settings</strong> tab</li>
+      <li>Scroll to the <strong>Danger Zone</strong> section</li>
+      <li>Tap <strong>Delete My Account & All Data</strong></li>
+      <li>Confirm the deletion</li>
+    </ol>
+    <p style="margin-top: 0.75rem; margin-bottom: 0;">This permanently deletes your profile, all visit records, provider information, and account credentials from our systems.</p>
+  </div>
+
+  <h2>What gets deleted</h2>
+  <ul>
+    <li>Your account profile (name, email)</li>
+    <li>All recorded visit transcripts and AI-generated summaries</li>
+    <li>Provider profiles you've saved</li>
+    <li>Follow-up reminders and calendar associations</li>
+  </ul>
+
+  <h2>Retention period</h2>
+  <p>Once deleted, your data is permanently removed from our active databases immediately. Any residual backups are purged within 30 days in accordance with our <a href="/privacy.html" style="color: var(--teal);">Privacy Policy</a>.</p>
+
+  <h2>Need help?</h2>
+  <p>If you're unable to access the app or need assistance with data deletion, contact us at <a href="mailto:support@wellumahealth.com" style="color: var(--teal);">support@wellumahealth.com</a> and we'll process your request within 30 days.</p>
+
+</div>
+
+<footer>
+  <div style="margin-bottom: 0.75rem;">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:support@wellumahealth.com">Contact</a>
+  </div>
+  <p>© 2026 Welluma Health Inc. All rights reserved. · Greater Sudbury, Ontario, Canada</p>
+  <p style="margin-top: 0.5rem; font-size: 11px; color: rgba(255,255,255,0.3);">Created by a Nurse Practitioner 🩺</p>
+</footer>
+
+</body>
+</html>
